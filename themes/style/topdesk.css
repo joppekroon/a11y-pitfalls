@@ -1,0 +1,424 @@
+:root {
+  /* Denim */
+  --denim-100: hsl(191, 75%, 87%);
+  --denim-200: hsl(191, 66%, 68%);
+  --denim-300: hsl(191, 58%, 52%);
+  --denim-400: hsl(191, 100%, 34%);
+  --denim-500: hsl(194, 88%, 33%);
+  --denim-600: hsl(194, 88%, 30%);
+  --denim-700: hsl(194, 88%, 27%);
+  --denim-800: hsl(194, 88%, 20%);
+  /* Aqua */
+  --aqua-100: hsl(175, 56%, 91%);
+  --aqua-200: hsl(175, 57%, 82%);
+  --aqua-300: hsl(177, 51%, 65%);
+  --aqua-400: hsl(177, 48%, 59%);
+  --aqua-500: hsl(177, 45%, 51%);
+  --aqua-600: hsl(176, 59%, 43%);
+  --aqua-700: hsl(176, 66%, 35%);
+  --aqua-800: hsl(176, 61%, 27%);
+  /* Forest */
+  --forest-100: hsl(140, 47%, 89%);
+  --forest-200: hsl(146, 48%, 74%);
+  --forest-300: hsl(152, 47%, 62%);
+  --forest-400: hsl(151, 48%, 52%);
+  --forest-500: hsl(159, 85%, 35%);
+  --forest-600: hsl(164, 73%, 33%);
+  --forest-700: hsl(164, 73%, 26%);
+  --forest-800: hsl(161, 73%, 22%);
+  /* Cherry */
+  --cherry-100: hsl(18, 85%, 89%);
+  --cherry-200: hsl(13, 81%, 78%);
+  --cherry-300: hsl(12, 81%, 65%);
+  --cherry-400: hsl(8, 78%, 56%);
+  --cherry-500: hsl(9, 60%, 47%);
+  --cherry-600: hsl(9, 60%, 43%);
+  --cherry-700: hsl(9, 61%, 38%);
+  --cherry-800: hsl(8, 60%, 28%);
+  /* Gold */
+  --gold-100: hsl(48, 95%, 85%);
+  --gold-200: hsl(46, 100%, 77%);
+  --gold-300: hsl(46, 100%, 67%);
+  --gold-400: hsl(46, 100%, 60%);
+  --gold-500: hsl(46, 100%, 53%);
+  --gold-600: hsl(47, 88%, 48%);
+  --gold-700: hsl(46, 88%, 43%);
+  --gold-800: hsl(47, 88%, 32%);
+  /* Ash */
+  --ash-100: hsl(0, 0%, 97%);
+  --ash-200: hsl(0, 0%, 93%);
+  --ash-300: hsl(0, 0%, 84%);
+  --ash-400: hsl(0, 0%, 66%);
+  --ash-500: hsl(0, 0%, 46%);
+  --ash-600: hsl(0, 0%, 32%);
+  --ash-700: hsl(0, 0%, 23%);
+  --ash-800: hsl(0, 0%, 14%);
+  /* Cassis */
+  --cassis-100: hsl(332, 41%, 93%);
+  --cassis-200: hsl(331, 40%, 88%);
+  --cassis-300: hsl(323, 30%, 75%);
+  --cassis-400: hsl(307, 19%, 46%);
+  --cassis-500: hsl(307, 27%, 31%);
+  --cassis-600: hsl(284, 31%, 27%);
+  --cassis-700: hsl(265, 41%, 25%);
+  --cassis-800: hsl(266, 41%, 20%);
+  /* Pumpkin */
+  --pumpkin-100: hsl(36, 100%, 86%);
+  --pumpkin-200: hsl(35, 100%, 82%);
+  --pumpkin-300: hsl(31, 97%, 77%);
+  --pumpkin-400: hsl(29, 87%, 71%);
+  --pumpkin-500: hsl(27, 93%, 67%);
+  --pumpkin-600: hsl(24, 92%, 62%);
+  --pumpkin-700: hsl(22, 78%, 55%);
+  --pumpkin-800: hsl(22, 78%, 45%);
+
+  /* Named colors (selection) */
+  --topdesk-blue: var(--denim-400);
+  --vermillion: var(--cherry-400);
+  --merlot: var(--cherry-500);
+  --aqua: hsl(177, 41%, 66%);
+  --azure: hsl(186, 70%, 36%);
+  --fern: hsl(152, 40%, 61%);
+  --pine: hsl(172, 73%, 32%);
+  --coral: var(--cherry-300);
+  --cantaloupe: hsl(27, 94%, 74%);
+  --pumpkin: hsl(27, 80%, 66%);
+
+  /* Variables for the rounded shapes */
+  --shape-size: min(30vw, 30vh);
+  --shape-top: 0;
+  --shape-right: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bree Serif", serif;
+  color: var(--ash-700);
+  font-weight: 400;
+}
+
+h4,
+h5 {
+  font-family: "Open Sans", sans-serif;
+  color: var(--ash-700);
+  font-weight: 600;
+}
+
+h6 {
+  /* No style defined for h6 in brandbook */
+  background: rebeccapurple;
+  color: fuchsia;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 3.375rem;
+}
+h2 {
+  font-size: 2rem;
+  line-height: 2.375;
+}
+h3 {
+  font-size: 1.75rem;
+  line-height: 2.125rem;
+}
+h4 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+h5 {
+  font-size: 1.3125;
+  line-height: 1.8125;
+}
+
+.deck-container {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: var(--ash-600);
+  background: var(--ash-100);
+}
+
+.deck-container > .slide {
+  height: 100vh;
+  padding: 48px;
+}
+
+a {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--denim-500);
+
+  transition-property: transform;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
+}
+
+a:hover {
+  transform: translateY(-0.3rem);
+
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+a:active {
+  color: var(--denim-800);
+}
+
+::selection {
+  color: var(--ash-800);
+  background: var(--forest-400);
+}
+
+.deck-container > .slide:first-of-type {
+  /* 
+   * Preventing the blinking caret on click to focus.
+   */
+  caret-color: transparent;
+}
+
+/* revealing content on a slide */
+.slide .deck-before,
+.slide .deck-previous {
+  opacity: 0.4;
+}
+.slide .deck-before:not(.deck-child-current) .deck-before,
+.slide .deck-before:not(.deck-child-current) .deck-previous,
+.slide .deck-previous:not(.deck-child-current) .deck-before,
+.slide .deck-previous:not(.deck-child-current) .deck-previous {
+  opacity: 1;
+}
+.slide .deck-child-current {
+  opacity: 1;
+}
+
+.deck-container > .slide,
+.deck-container.deck-menu > .slide /* deck.menu.css inapropriately sets a padding */ {
+  padding: 0 36px;
+}
+
+/* 
+ * Quirky rounded shapes
+ * 
+ * Enable by adding classes to the main slide
+ * - shape-large to enable the topdesk blue shape (default top right)
+ * - shape-small to enable the wedge (default aqua/azure, top right)
+ * - shape-red to set the wedge to coral/vermillion
+ * - shape-green to set the wedge to fern/pine
+ * - shape-orange to set the wedge to cantaloupe/pumpkin
+ * - shape-tl to position the shape(s) in the top left corner
+ * - shape-br to position the shape(s) in the bottom right corner
+ * - shape-bl to position the shape(s) in the bottom left corner
+ */
+.deck-container:not(.deck-menu) .slide.deck-current.shape-large ~ .large-shape,
+.deck-container:not(.deck-menu) .slide.deck-current.shape-small ~ .small-shape,
+.deck-container:not(.deck-menu)
+  .slide.deck-current.shape-small.shape-large
+  ~ .large-shape::after {
+  display: block;
+}
+
+.large-shape {
+  display: none;
+  background: var(--topdesk-blue);
+  overflow: hidden;
+
+  position: absolute;
+
+  width: calc(var(--shape-size) * 0.8);
+  height: calc(var(--shape-size) * 2.4);
+
+  top: var(--shape-top, auto);
+  right: var(--shape-right, auto);
+  bottom: var(--shape-bottom, auto);
+  left: var(--shape-left, auto);
+}
+.small-shape {
+  display: none;
+  background: var(--shape-color, var(--aqua));
+}
+.large-shape::after {
+  /* Small shape intersecting with large shape */
+  display: none;
+  content: "";
+  background: var(--shape-intersection-color, var(--azure));
+}
+.small-shape,
+.large-shape::after {
+  position: absolute;
+
+  width: var(--shape-size);
+  height: var(--shape-size);
+
+  top: var(--shape-top, auto);
+  right: var(--shape-right, auto);
+  bottom: var(--shape-bottom, auto);
+  left: var(--shape-left, auto);
+}
+.large-shape,
+.slide.deck-current.shape-small:not(.shape-large) ~ .small-shape {
+  /* round the corner oppposite of the slide edge */
+  border-top-left-radius: calc(
+    var(--shape-top, 1) * var(--shape-left, 1) * var(--shape-size)
+  );
+  border-top-right-radius: calc(
+    var(--shape-top, 1) * var(--shape-right, 1) * var(--shape-size)
+  );
+  border-bottom-right-radius: calc(
+    var(--shape-bottom, 1) * var(--shape-right, 1) * var(--shape-size)
+  );
+  border-bottom-left-radius: calc(
+    var(--shape-bottom, 1) * var(--shape-left, 1) * var(--shape-size)
+  );
+}
+.large-shape::after,
+.slide.deck-current.shape-small.shape-large ~ .small-shape {
+  /* shift the small shape a little */
+  margin-left: calc(var(--shape-right, 1) * var(--shape-size) * 0.2);
+  margin-right: calc(var(--shape-left, 1) * var(--shape-size) * 0.2);
+
+  /* round the corner oppposite (horizontally) of the large shape */
+  border-top-left-radius: calc(
+    var(--shape-top, 1) * var(--shape-right, 1) * var(--shape-size)
+  );
+  border-top-right-radius: calc(
+    var(--shape-top, 1) * var(--shape-left, 1) * var(--shape-size)
+  );
+  border-bottom-right-radius: calc(
+    var(--shape-bottom, 1) * var(--shape-left, 1) * var(--shape-size)
+  );
+  border-bottom-left-radius: calc(
+    var(--shape-bottom, 1) * var(--shape-right, 1) * var(--shape-size)
+  );
+}
+.slide.deck-current.shape-green ~ .small-shape,
+.slide.deck-current.shape-green ~ .large-shape {
+  --shape-color: var(--fern);
+  --shape-intersection-color: var(--pine);
+}
+
+.slide.deck-current.shape-red ~ .small-shape,
+.slide.deck-current.shape-red ~ .large-shape {
+  --shape-color: var(--coral);
+  --shape-intersection-color: var(--vermillion);
+}
+
+.slide.deck-current.shape-orange ~ .small-shape,
+.slide.deck-current.shape-orange ~ .large-shape {
+  --shape-color: var(--cantaloupe);
+  --shape-intersection-color: var(--pumpkin);
+}
+
+.slide.deck-current.shape-tl ~ .small-shape,
+.slide.deck-current.shape-tl ~ .large-shape {
+  --shape-top: 0;
+  --shape-left: 0;
+  --shape-right: initial;
+}
+.slide.deck-current.shape-br ~ .small-shape,
+.slide.deck-current.shape-br ~ .large-shape {
+  --shape-bottom: 0;
+  --shape-right: 0;
+  --shape-top: initial;
+}
+.slide.deck-current.shape-bl ~ .small-shape,
+.slide.deck-current.shape-bl ~ .large-shape {
+  --shape-bottom: 0;
+  --shape-left: 0;
+  --shape-top: initial;
+  --shape-right: initial;
+}
+
+/* Robin */
+.robin {
+  --robin-size: 0.7em;
+  --half-robin-size: calc(0.5 * var(--robin-size));
+
+  position: relative;
+  display: inline-block;
+  height: var(--robin-size);
+  width: var(--robin-size);
+
+  margin: 0 var(--half-robin-size);
+  transform: rotate(-45deg);
+}
+.robin::before,
+.robin::after {
+  content: "";
+  position: absolute;
+}
+.robin::before {
+  background: var(--merlot);
+  top: 0;
+  left: var(--half-robin-size);
+  width: var(--half-robin-size);
+  height: var(--robin-size);
+
+  border-top-right-radius: var(--half-robin-size);
+}
+
+.robin::after {
+  background: var(--vermillion);
+
+  top: var(--half-robin-size);
+  left: 0;
+  width: var(--robin-size);
+  height: var(--half-robin-size);
+
+  border-bottom-left-radius: var(--half-robin-size);
+}
+
+/* goto extension */
+.goto-form {
+  background: var(--ash-200);
+  border: 3px solid var(--denim-800);
+}
+.goto-form input,
+.goto-form label {
+  color: var(--ash-800);
+}
+
+/* menu extension */
+.deck-menu {
+  background: var(--ash-800);
+}
+
+.deck-menu .slide,
+.no-touch .deck-menu .slide:hover {
+  /* Overriding background set by menu extension */
+  background: var(--ash-100);
+}
+
+.deck-menu > .slide {
+  opacity: 0.8;
+}
+.deck-menu > .deck-current,
+.deck-menu > .deck-child-current,
+.no-touch .deck-menu .slide:hover {
+  opacity: 1;
+}
+.no-touch .deck-menu > .slide:not(:hover) {
+  transition-property: transform;
+  transition-duration: 0.1s !important;
+  transition-timing-function: ease-out !important;
+}
+.no-touch .deck-menu > .slide:hover {
+  transform: translateY(-6px) scale(0.22) !important;
+  transition-duration: 0.4s !important;
+  transition-timing-function: ease !important;
+}
+
+.deck-menu .deck-current,
+.no-touch .deck-menu > .slide .slide:hover {
+  outline-width: 12px;
+  outline-style: solid;
+  outline-offset: 15px;
+}
+.deck-menu .deck-current {
+  outline-color: var(--denim-400);
+}
+.no-touch .deck-menu > .slide .slide:hover {
+  outline-color: var(--cherry-400);
+}
