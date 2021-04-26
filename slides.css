@@ -3,12 +3,12 @@
 }
 
 example-host .sr-only {
-  background-size: 1rem 1rem;
+  background-size: 1.5rem 1.5rem;
   background-image: conic-gradient(
     transparent 90deg,
-    var(--ash-300) 90deg 180deg,
+    var(--ash-200) 90deg 180deg,
     transparent 180deg 270deg,
-    var(--ash-300) 270deg
+    var(--ash-200) 270deg
   );
   color: var(--ash-800);
   text-shadow: 0 0 7px var(--ash-100), 0 0 3px var(--ash-100),

@@ -18,8 +18,7 @@
   --pumpkin: hsl(27, 80%, 66%);
 
   /* Variables for the rounded shapes */
-  --shape-size: min(30vw, 30vh);
-
+  --shape-size: var(--td-shape-size, min(20vw, 20vh));
   --shape-color: var(--aqua);
   --shape-intersection-color: var(--azure);
 

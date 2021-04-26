@@ -83,11 +83,6 @@
   --coral: var(--cherry-300);
   --cantaloupe: hsl(27, 94%, 74%);
   --pumpkin: hsl(27, 80%, 66%);
-
-  /* Variables for the rounded shapes */
-  --shape-size: min(30vw, 30vh);
-  --shape-top: 0;
-  --shape-right: 0;
 }
 
 *:focus-visible {
@@ -143,12 +138,13 @@ h5 {
   font-size: 1.25rem;
   line-height: 1.75rem;
   color: var(--ash-600);
-  background: var(--ash-100);
 }
 
 .deck-container > .slide {
   height: 100vh;
   padding: 48px;
+
+  background: var(--ash-100);
 }
 
 a {
@@ -260,12 +256,6 @@ a:active {
 /* menu extension */
 .deck-menu {
   background: var(--ash-800);
-}
-
-.deck-menu .slide,
-.no-touch .deck-menu .slide:hover {
-  /* Overriding background set by menu extension */
-  background: var(--ash-100);
 }
 
 .deck-menu > .slide {
