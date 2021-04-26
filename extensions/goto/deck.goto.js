@@ -11,68 +11,74 @@ for jumping to any slide number/id in the deck (and processes that form
 accordingly). The form-showing state is indicated by the presence of a class on
 the deck container.
 */
-(function($, undefined) {
+(function ($, undefined) {
   var $document = $(document);
   var rootCounter;
 
-  var bindKeyEvents = function() {
-    $document.unbind('keydown.deckgoto');
-    $document.bind('keydown.deckgoto', function(event) {
-      var key = $.deck('getOptions').keys.goto;
+  var bindKeyEvents = function () {
+    $document.unbind("keydown.deckgoto");
+    $document.bind("keydown.deckgoto", function (event) {
+      var key = $.deck("getOptions").keys.goto;
       if (event.which === key || $.inArray(event.which, key) > -1) {
         event.preventDefault();
-        $.deck('toggleGoTo');
+        $.deck("toggleGoTo");
       }
     });
   };
 
-  var populateDatalist = function() {
-    var options = $.deck('getOptions');
+  var populateDatalist = function () {
+    var options = $.deck("getOptions");
     var $datalist = $(options.selectors.gotoDatalist);
 
-    $.each($.deck('getSlides'), function(i, $slide) {
-      var id = $slide.attr('id');
+    $.each($.deck("getSlides"), function (i, $slide) {
+      if (!$slide.parent().hasClass("deck-container")) {
+        return; //skip sub slides
+      }
+
+      var id = $slide.attr("id");
       if (id) {
         $datalist.append('<option value="' + id + '">');
       }
     });
   };
 
-  var markRootSlides = function() {
-    var options = $.deck('getOptions');
-    var slideTest = $.map([
-      options.classes.before,
-      options.classes.previous,
-      options.classes.current,
-      options.classes.next,
-      options.classes.after
-    ], function(el, i) {
-      return '.' + el;
-    }).join(', ');
+  var markRootSlides = function () {
+    var options = $.deck("getOptions");
+    var slideTest = $.map(
+      [
+        options.classes.before,
+        options.classes.previous,
+        options.classes.current,
+        options.classes.next,
+        options.classes.after
+      ],
+      function (el, i) {
+        return "." + el;
+      }
+    ).join(", ");
 
     rootCounter = 0;
-    $.each($.deck('getSlides'), function(i, $slide) {
+    $.each($.deck("getSlides"), function (i, $slide) {
       var $parentSlides = $slide.parentsUntil(
         options.selectors.container,
         slideTest
       );
 
       if ($parentSlides.length) {
-        $slide.removeData('rootIndex');
-      }
-      else if (!options.countNested) {
+        $slide.removeData("rootIndex");
+      } else if (!options.countNested) {
         ++rootCounter;
-        $slide.data('rootIndex', rootCounter);
+        $slide.data("rootIndex", rootCounter);
       }
     });
   };
 
-  var handleFormSubmit = function() {
-    var options = $.deck('getOptions');
+  var handleFormSubmit = function () {
+    var options = $.deck("getOptions");
     var $form = $(options.selectors.gotoForm);
 
-    $form.unbind('submit.deckgoto');
-    $form.bind('submit.deckgoto', function(event) {
+    $form.unbind("submit.deckgoto");
+    $form.bind("submit.deckgoto", function (event) {
       var $field = $(options.selectors.gotoInput);
       var indexOrId = $field.val();
       var index = parseInt(indexOrId, 10);
@@ -81,17 +87,17 @@ the deck container.
         if (!isNaN(index) && index >= rootCounter) {
           return false;
         }
-        $.each($.deck('getSlides'), function(i, $slide) {
-          if ($slide.data('rootIndex') === index) {
+        $.each($.deck("getSlides"), function (i, $slide) {
+          if ($slide.data("rootIndex") === index) {
             index = i + 1;
             return false;
           }
         });
       }
 
-      $.deck('go', isNaN(index) ? indexOrId : index - 1);
-      $.deck('hideGoTo');
-      $field.val('');
+      $.deck("go", isNaN(index) ? indexOrId : index - 1);
+      $.deck("hideGoTo");
+      $field.val("");
       event.preventDefault();
     });
   };
@@ -127,13 +133,13 @@ the deck container.
   */
   $.extend(true, $.deck.defaults, {
     classes: {
-      goto: 'deck-goto'
+      goto: "deck-goto"
     },
 
     selectors: {
-      gotoDatalist: '#goto-datalist',
-      gotoForm: '.goto-form',
-      gotoInput: '#goto-slide'
+      gotoDatalist: "#goto-datalist",
+      gotoForm: ".goto-form",
+      gotoInput: "#goto-slide"
     },
 
     keys: {
@@ -149,10 +155,10 @@ the deck container.
   Shows the Go To Slide form by adding the class specified by the goto class
   option to the deck container.
   */
-  $.deck('extend', 'showGoTo', function() {
-    var options = $.deck('getOptions');
-    $.deck('getContainer').addClass(options.classes.goto);
-    $(options.selectors.gotoForm).attr('aria-hidden', false);
+  $.deck("extend", "showGoTo", function () {
+    var options = $.deck("getOptions");
+    $.deck("getContainer").addClass(options.classes.goto);
+    $(options.selectors.gotoForm).attr("aria-hidden", false);
     $(options.selectors.gotoInput).focus();
   });
 
@@ -162,11 +168,11 @@ the deck container.
   Hides the Go To Slide form by removing the class specified by the goto class
   option from the deck container.
   */
-  $.deck('extend', 'hideGoTo', function() {
-    var options = $.deck('getOptions');
+  $.deck("extend", "hideGoTo", function () {
+    var options = $.deck("getOptions");
     $(options.selectors.gotoInput).blur();
-    $.deck('getContainer').removeClass(options.classes.goto);
-    $(options.selectors.gotoForm).attr('aria-hidden', true);
+    $.deck("getContainer").removeClass(options.classes.goto);
+    $(options.selectors.gotoForm).attr("aria-hidden", true);
   });
 
   /*
@@ -174,17 +180,16 @@ the deck container.
 
   Toggles between showing and hiding the Go To Slide form.
   */
-  $.deck('extend', 'toggleGoTo', function() {
-    var options = $.deck('getOptions');
-    var hasGotoClass = $.deck('getContainer').hasClass(options.classes.goto);
-    $.deck(hasGotoClass ? 'hideGoTo' : 'showGoTo');
+  $.deck("extend", "toggleGoTo", function () {
+    var options = $.deck("getOptions");
+    var hasGotoClass = $.deck("getContainer").hasClass(options.classes.goto);
+    $.deck(hasGotoClass ? "hideGoTo" : "showGoTo");
   });
 
-  $document.bind('deck.init', function() {
+  $document.bind("deck.init", function () {
     bindKeyEvents();
     populateDatalist();
     markRootSlides();
     handleFormSubmit();
   });
 })(jQuery);
-
