@@ -1,0 +1,13 @@
+:host {
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  display: inline-flex;
+}
+:host(:focus-within) {
+  outline-style: auto;
+}
+input,
+::slotted(input) {
+  border: none;
+  outline: none;
+}

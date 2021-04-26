@@ -1,0 +1,30 @@
+<td-shape small red></td-shape>
+<div class="slide-content">
+  <h2 id="fancy-input-no-fix-title">Fix?: Label not working again</h2>
+
+  <example-host>
+    <label for="input-id">Fancy text</label>
+    <fancy-input>
+      <input id="input-id" type="text" />
+    </fancy-input>
+  </example-host>
+
+  <blockquote class="slide">
+    edit has autocomplete blank
+  </blockquote>
+
+  <pre>
+    <code class="language-html">
+      &lt;label for="input-id"&gt;Fancy text&lt;/label&gt;
+      &lt;fancy-input&gt;
+        &lt;input id="input-id" type="text" /&gt;
+      &lt;/fancy-input&gt;
+    </code>
+  </pre>
+
+  <ul>
+    <li><code>for</code> is now pointing to an <code>input</code></li>
+    <li><code>input</code> is available in light DOM</li>
+    <li class="slide">But the replacement still messes it up</li>
+  </ul>
+</div>

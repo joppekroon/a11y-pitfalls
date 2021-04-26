@@ -1,0 +1,30 @@
+<td-shape small green></td-shape>
+<div class="slide-content">
+  <h2 id="fancy-input-no-fix-title">Fix: Label not working again</h2>
+
+  <example-host>
+    <label id="fancy-label-id">Fancy text</label>
+    <fancy-input>
+      <input aria-labelledby="fancy-label-id" type="text" />
+    </fancy-input>
+  </example-host>
+
+  <blockquote class="slide">
+    Fancy text has autocomplete blank
+  </blockquote>
+
+  <pre>
+    <code class="language-html">
+      &lt;label id="fancy-label-id"&gt;Fancy text&lt;/label&gt;
+      &lt;fancy-input&gt;
+        &lt;input aria-labelledby="fancy-label-id" type="text" /&gt;
+      &lt;/fancy-input&gt;
+    </code>
+  </pre>
+
+  <ul>
+    <li><code>aria-labelledby</code> reference survives the replacement</li>
+    <li>There are more ways to solve this</li>
+    <li>Test, test, test!</li>
+  </ul>
+</div>
