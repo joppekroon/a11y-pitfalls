@@ -1,0 +1,67 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  position: relative;
+}
+h1 {
+  font-family: "Bree Serif", serif;
+  color: var(--ash-700);
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 3.375rem;
+}
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: var(--ash-600);
+
+  text-align: end;
+}
+
+/* Robin */
+.robin {
+  --robin-size: 150px;
+  --half-robin-size: 75px;
+
+  display: inline-block;
+
+  position: absolute;
+  top: 20%;
+  right: 10%;
+
+  height: var(--robin-size);
+  width: var(--robin-size);
+
+  margin: 0 var(--half-robin-size);
+  transform: rotate(-45deg);
+}
+.robin::before,
+.robin::after {
+  content: "";
+  position: absolute;
+}
+.robin::before {
+  background: var(--merlot);
+  top: 0;
+  left: var(--half-robin-size);
+  width: var(--half-robin-size);
+  height: var(--robin-size);
+
+  border-top-right-radius: var(--half-robin-size);
+}
+
+.robin::after {
+  background: var(--vermillion);
+
+  top: var(--half-robin-size);
+  left: 0;
+  width: var(--robin-size);
+  height: var(--half-robin-size);
+
+  border-bottom-left-radius: var(--half-robin-size);
+}

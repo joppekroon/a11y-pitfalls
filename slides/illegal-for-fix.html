@@ -1,0 +1,56 @@
+<td-shape small br orange></td-shape>
+<div class="slide-content">
+  <h2 id="illegal-for-fix-title">Fix: Label not working</h2>
+
+  <example-host>
+    <label id="back-label" class="sr-only">Previous page</label>
+    <a aria-labelledby="back-label" href="#" class="material-icons"
+      >arrow_back</a
+    >
+    <a aria-labelledby="forward-label" href="#" class="material-icons"
+      >arrow_forward</a
+    >
+    <label id="forward-label" class="sr-only">Next page</label>
+  </example-host>
+
+  <div class="slide">
+    <blockquote>
+      Previous page link
+    </blockquote>
+    <blockquote>
+      Next page link
+    </blockquote>
+  </div>
+
+  <pre>
+    <code class="language-html">
+      &lt;label id="back-label" class="sr-only"&gt;Previous page&lt;/label&gt;
+      &lt;a aria-labelledby="back-label" href="..." class="material-icons"&gt;arrow_back&lt;/a&gt;
+      &lt;a aria-labelledby="forward-label" href="..." class="material-icons"&gt;arrow_forward&lt;/a&gt;
+      &lt;label id="forward-label" class="sr-only"&gt;Next page&lt;/label&gt;
+    </code>
+  </pre>
+
+  <ul>
+    <li>
+      A <code>for</code> attribute can only refer to labelable elements
+      <ul>
+        <li><code>button</code>,</li>
+        <li>
+          &#8203;<code>input</code> (except when <code>type="hidden"</code>),
+        </li>
+        <li><code>meter</code>,</li>
+        <li><code>output</code>,</li>
+        <li><code>progress</code>,</li>
+        <li><code>select</code>,</li>
+        <li><code>textarea</code>,</li>
+        <li>
+          <a
+            href="https://web.dev/more-capable-form-controls/#form-associated-custom-elements"
+            >form-associated custom elements</a
+          >
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -1,7 +1,7 @@
 {
-  "name": "topdesk-slide-deck",
+  "name": "a11y-pitfalls",
   "version": "1.0.0",
-  "description": "Slide deck framework adapted from deck.js, with a TOPdesk brand visual sauce.",
+  "description": "IDMx Presentation",
   "main": "index.html",
   "scripts": {
     "start": "serve",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/codesandbox-app/static-template.git"
   },
-  "keywords": ["slide", "topdesk"],
+  "keywords": [],
   "author": "Joppe Kroon",
   "license": "MIT",
   "bugs": {

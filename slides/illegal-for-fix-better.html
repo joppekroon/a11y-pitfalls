@@ -1,0 +1,51 @@
+<td-shape small br green></td-shape>
+<div class="slide-content">
+  <h2 id="illegal-for-fix-better-title">
+    Fix better: Label not working
+  </h2>
+
+  <example-host>
+    <a href="#" class="no-underline">
+      <span class="material-icons" aria-hidden="true">arrow_back</span>
+      <span class="sr-only">Previous page</span>
+    </a>
+    <a href="#" class="no-underline">
+      <span class="material-icons" aria-hidden="true">arrow_forward</span>
+      <span class="sr-only">Next page</span>
+    </a>
+  </example-host>
+
+  <div class="slide">
+    <blockquote>
+      Previous page link
+    </blockquote>
+    <blockquote>
+      Next page link
+    </blockquote>
+  </div>
+
+  <pre>
+    <code class="language-html">
+      &lt;a href="#"&gt;
+        &lt;span class="material-icons" aria-hidden="true"&gt;arrow_back&lt;/span&gt;
+        &lt;span class="sr-only"&gt;Previous page&lt;/span&gt;
+      &lt;/a&gt;
+      &lt;a href="#"&gt;
+        &lt;span class="material-icons" aria-hidden="true"&gt;arrow_forward&lt;/span&gt;
+        &lt;span class="sr-only"&gt;Next page&lt;/span&gt;
+      &lt;/a&gt;
+    </code>
+  </pre>
+
+  <ul>
+    <li>
+      Why use a <code>&lt;label&gt;</code> when the <code>for</code> doesn't
+      work?
+    </li>
+    <li>
+      <code>aria-hidden</code> is a more robust solution than
+      <code>aria-labelledby</code>
+    </li>
+    <li>Cleaner, everything contained in the anchor</li>
+  </ul>
+</div>

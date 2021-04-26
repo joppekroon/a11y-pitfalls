@@ -1,0 +1,70 @@
+.deck-container > .slide {
+  padding: 36px 72px;
+}
+
+example-host .sr-only {
+  background-size: 1rem 1rem;
+  background-image: conic-gradient(
+    transparent 90deg,
+    var(--ash-300) 90deg 180deg,
+    transparent 180deg 270deg,
+    var(--ash-300) 270deg
+  );
+  color: var(--ash-800);
+  text-shadow: 0 0 7px var(--ash-100), 0 0 3px var(--ash-100),
+    0 0 1px var(--ash-100);
+}
+
+example-host .material-icons,
+example-host .no-underline {
+  text-decoration: none;
+}
+
+/* Styles for slides */
+p,
+blockquote,
+iframe,
+img,
+pre,
+video {
+  margin: 1.5rem 0;
+}
+
+blockquote {
+  quotes: "\00AB""\00BB""\201E""\201C";
+}
+blockquote::before {
+  content: open-quote;
+}
+blockquote::after {
+  content: close-quote;
+}
+pre[class*="language-"],
+pre.slide[class*="language-"] {
+  margin-top: 5rem;
+  min-width: 40%;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+pre[class*="language-"] > code,
+pre.slide[class*="language-"] > code {
+  white-space: pre-wrap;
+}
+
+:not(li) > ul {
+  margin: 5rem 0 1rem 0;
+  list-style-position: inside;
+}
+li > ul {
+  margin-top: 1rem;
+}
+
+:not(pre) > code {
+  font-weight: 600;
+  background: var(--ash-200);
+  padding-inline: 0.2em;
+  padding-block: 0.1em;
+  border: 1px solid var(--ash-600);
+  border-radius: 5px;
+}

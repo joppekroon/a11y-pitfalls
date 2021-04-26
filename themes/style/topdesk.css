@@ -90,6 +90,11 @@
   --shape-right: 0;
 }
 
+*:focus-visible {
+  outline: 2px solid black;
+  outline-offset: 3px;
+}
+
 h1,
 h2,
 h3 {
@@ -128,8 +133,8 @@ h4 {
   line-height: 2rem;
 }
 h5 {
-  font-size: 1.3125;
-  line-height: 1.8125;
+  font-size: 1.3125rem;
+  line-height: 1.8125rem;
 }
 
 .deck-container {
@@ -180,7 +185,7 @@ a:active {
 }
 
 /* revealing content on a slide */
-.slide .deck-before,
+/* .slide .deck-before,
 .slide .deck-previous {
   opacity: 0.4;
 }
@@ -192,143 +197,15 @@ a:active {
 }
 .slide .deck-child-current {
   opacity: 1;
-}
+} */
 
 .deck-container > .slide,
 .deck-container.deck-menu > .slide /* deck.menu.css inapropriately sets a padding */ {
   padding: 0 36px;
 }
 
-/* 
- * Quirky rounded shapes
- * 
- * Enable by adding classes to the main slide
- * - shape-large to enable the topdesk blue shape (default top right)
- * - shape-small to enable the wedge (default aqua/azure, top right)
- * - shape-red to set the wedge to coral/vermillion
- * - shape-green to set the wedge to fern/pine
- * - shape-orange to set the wedge to cantaloupe/pumpkin
- * - shape-tl to position the shape(s) in the top left corner
- * - shape-br to position the shape(s) in the bottom right corner
- * - shape-bl to position the shape(s) in the bottom left corner
- */
-.deck-container:not(.deck-menu) .slide.deck-current.shape-large ~ .large-shape,
-.deck-container:not(.deck-menu) .slide.deck-current.shape-small ~ .small-shape,
-.deck-container:not(.deck-menu)
-  .slide.deck-current.shape-small.shape-large
-  ~ .large-shape::after {
-  display: block;
-}
-
-.large-shape {
-  display: none;
-  background: var(--topdesk-blue);
-  overflow: hidden;
-
-  position: absolute;
-
-  width: calc(var(--shape-size) * 0.8);
-  height: calc(var(--shape-size) * 2.4);
-
-  top: var(--shape-top, auto);
-  right: var(--shape-right, auto);
-  bottom: var(--shape-bottom, auto);
-  left: var(--shape-left, auto);
-}
-.small-shape {
-  display: none;
-  background: var(--shape-color, var(--aqua));
-}
-.large-shape::after {
-  /* Small shape intersecting with large shape */
-  display: none;
-  content: "";
-  background: var(--shape-intersection-color, var(--azure));
-}
-.small-shape,
-.large-shape::after {
-  position: absolute;
-
-  width: var(--shape-size);
-  height: var(--shape-size);
-
-  top: var(--shape-top, auto);
-  right: var(--shape-right, auto);
-  bottom: var(--shape-bottom, auto);
-  left: var(--shape-left, auto);
-}
-.large-shape,
-.slide.deck-current.shape-small:not(.shape-large) ~ .small-shape {
-  /* round the corner oppposite of the slide edge */
-  border-top-left-radius: calc(
-    var(--shape-top, 1) * var(--shape-left, 1) * var(--shape-size)
-  );
-  border-top-right-radius: calc(
-    var(--shape-top, 1) * var(--shape-right, 1) * var(--shape-size)
-  );
-  border-bottom-right-radius: calc(
-    var(--shape-bottom, 1) * var(--shape-right, 1) * var(--shape-size)
-  );
-  border-bottom-left-radius: calc(
-    var(--shape-bottom, 1) * var(--shape-left, 1) * var(--shape-size)
-  );
-}
-.large-shape::after,
-.slide.deck-current.shape-small.shape-large ~ .small-shape {
-  /* shift the small shape a little */
-  margin-left: calc(var(--shape-right, 1) * var(--shape-size) * 0.2);
-  margin-right: calc(var(--shape-left, 1) * var(--shape-size) * 0.2);
-
-  /* round the corner oppposite (horizontally) of the large shape */
-  border-top-left-radius: calc(
-    var(--shape-top, 1) * var(--shape-right, 1) * var(--shape-size)
-  );
-  border-top-right-radius: calc(
-    var(--shape-top, 1) * var(--shape-left, 1) * var(--shape-size)
-  );
-  border-bottom-right-radius: calc(
-    var(--shape-bottom, 1) * var(--shape-left, 1) * var(--shape-size)
-  );
-  border-bottom-left-radius: calc(
-    var(--shape-bottom, 1) * var(--shape-right, 1) * var(--shape-size)
-  );
-}
-.slide.deck-current.shape-green ~ .small-shape,
-.slide.deck-current.shape-green ~ .large-shape {
-  --shape-color: var(--fern);
-  --shape-intersection-color: var(--pine);
-}
-
-.slide.deck-current.shape-red ~ .small-shape,
-.slide.deck-current.shape-red ~ .large-shape {
-  --shape-color: var(--coral);
-  --shape-intersection-color: var(--vermillion);
-}
-
-.slide.deck-current.shape-orange ~ .small-shape,
-.slide.deck-current.shape-orange ~ .large-shape {
-  --shape-color: var(--cantaloupe);
-  --shape-intersection-color: var(--pumpkin);
-}
-
-.slide.deck-current.shape-tl ~ .small-shape,
-.slide.deck-current.shape-tl ~ .large-shape {
-  --shape-top: 0;
-  --shape-left: 0;
-  --shape-right: initial;
-}
-.slide.deck-current.shape-br ~ .small-shape,
-.slide.deck-current.shape-br ~ .large-shape {
-  --shape-bottom: 0;
-  --shape-right: 0;
-  --shape-top: initial;
-}
-.slide.deck-current.shape-bl ~ .small-shape,
-.slide.deck-current.shape-bl ~ .large-shape {
-  --shape-bottom: 0;
-  --shape-left: 0;
-  --shape-top: initial;
-  --shape-right: initial;
+.slide-content {
+  position: relative;
 }
 
 /* Robin */
