@@ -141,7 +141,6 @@ h5 {
 }
 
 .deck-container > .slide {
-  height: 100vh;
   padding: 48px;
 
   background: var(--ash-100);
