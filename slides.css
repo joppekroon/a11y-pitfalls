@@ -68,3 +68,16 @@ li > ul {
   border: 1px solid var(--ash-600);
   border-radius: 5px;
 }
+
+.example-section {
+  background: var(--ash-200);
+  border: 1px solid var(--ash-600);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.example-section + .example-section {
+  margin-top: 1rem;
+}
+.example-section p:last-child {
+  margin-bottom: 0;
+}

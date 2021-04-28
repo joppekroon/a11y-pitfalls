@@ -1,0 +1,65 @@
+<td-shape small green></td-shape>
+<div class="slide-content">
+  <h2>Fix: Label not attached to input</h2>
+
+  <example-host>
+    <section aria-labelledby="question-title" class="example-section">
+      <h3 id="question-title">Question:</h3>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur,
+        quae.
+      </p>
+    </section>
+    <section aria-labelledby="answer-title" class="example-section">
+      <h3 id="answer-title">Answer:</h3>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur,
+        quae.
+      </p>
+    </section>
+  </example-host>
+
+  <div class="slide">
+    <blockquote>
+      region Question: heading level 3
+    </blockquote>
+    <blockquote>
+      region Answer: heading level 3
+    </blockquote>
+  </div>
+
+  <pre>
+    <code class="language-html">
+      &lt;section aria-labelledby="question-title"&gt;
+        &lt;h3 id="question-title"&gt;Question:&lt;/h3&gt;
+        &lt;p&gt;Lorem...&lt;/p&gt;
+      &lt;/section&gt;
+      &lt;section aria-labelledby="answer-title"&gt;
+        &lt;h3 id="answer-title"&gt;Answer:&lt;/h3&gt;
+        &lt;p&gt;Lorem...&lt;/p&gt;
+      &lt;/section&gt;
+    </code>
+  </pre>
+
+  <ul>
+    <li>
+      The title is explicitly linked to the <code>&lt;section&gt;</code> and is
+      now considered a landmark
+    </li>
+    <li>Screen reader user can quickly jump between landmarks</li>
+    <li>User will get notified of a move to a new landmarks</li>
+    <li>
+      Labeling other landmarks is advisable, particularly when there are
+      multiple of the same type
+    </li>
+    <li>
+      <code>&lt;form&gt;</code> still requires <code>role="form"</code> to work
+      as a landmark
+    </li>
+    <li><code>&lt;article&gt;</code> is never considered a landmark</li>
+    <li>
+      Only the top level <code>&lt;header&gt;</code> and
+      <code>&lt;footer&gt;</code> are considered landmarks
+    </li>
+  </ul>
+</div>
