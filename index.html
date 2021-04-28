@@ -131,7 +131,14 @@
 
         $(function () {
           $.deck(".slide", {
-            countNested: false
+            countNested: false,
+            // removed backspace!
+            keys: {
+              // enter, space, page down, right arrow, down arrow
+              next: [13, 32, 34, 39, 40],
+              // page up, left arrow, up arrow
+              previous: [33, 37, 38]
+            }
           });
         });
       });

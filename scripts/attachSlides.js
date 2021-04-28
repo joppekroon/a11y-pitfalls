@@ -20,15 +20,26 @@ async function getSlideContent(slide) {
 
 export default async function attachSlides() {
   const slides = [...document.querySelectorAll("section[data-slide]")];
+  const parser = new DOMParser();
 
   for await (const data of slides.map(async (slide) => ({
     element: slide,
     name: slide.dataset.slide,
     content: await getSlideContent(slide.dataset.slide)
   }))) {
-    data.element.innerHTML = data.content;
+    const doc = parser.parseFromString(data.content, "text/html");
+    const titleEl = doc.querySelector("h2");
+    const titleId = `${data.name}-title`;
+
+    if (!titleEl) {
+      console.error(`Missing title in ${data.name}`);
+    } else {
+      titleEl.setAttribute("id", titleId);
+    }
+
+    data.element.innerHTML = doc.body.innerHTML;
     data.element.classList.add("slide");
-    data.element.setAttribute("id", data.name);
-    data.element.setAttribute("aria-labelledby", `${data.name}-title`);
+    data.element.setAttribute("id", data.name); // used by goto
+    data.element.setAttribute("aria-labelledby", titleId);
   }
 }
