@@ -1,5 +1,6 @@
 .deck-container > .slide {
-  padding: 36px 72px;
+  padding: 3rem 6rem;
+  height: 100%;
 }
 
 example-host .sr-only {
@@ -80,4 +81,22 @@ li > ul {
 }
 .example-section p:last-child {
   margin-bottom: 0;
+}
+
+/* 
+ * calc is not supported in media queries in Chrome, so making a guess.
+ */
+@media (min-width: 1400px) {
+  .slide-content {
+    height: 100%;
+    columns: 2;
+    column-gap: 5rem;
+    column-fill: auto;
+  }
+  .slide-content > h2 {
+    column-span: all;
+  }
+  .slide-content > * {
+    break-inside: avoid;
+  }
 }
