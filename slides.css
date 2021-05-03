@@ -16,9 +16,20 @@ example-host .sr-only {
     0 0 1px var(--ash-100);
 }
 
-example-host .material-icons,
-example-host .no-underline {
+example-host a.no-underline {
   text-decoration: none;
+
+  display: inline-block;
+
+  transition-property: transform;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
+}
+
+example-host a.no-underline:hover {
+  transform: translateY(-0.3rem);
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
 }
 
 /* Styles for slides */
