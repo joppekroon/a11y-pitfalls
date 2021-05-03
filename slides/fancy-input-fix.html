@@ -3,28 +3,27 @@
   <h2>Fix: Label not working again</h2>
 
   <example-host>
-    <label id="fancy-id-3">Fancy text</label>
+    <label for="fancy-id-2">Fancy text</label>
     <fancy-input>
-      <input aria-labelledby="fancy-id-3" type="text" />
+      <input id="fancy-id-2" type="text" />
     </fancy-input>
   </example-host>
 
   <blockquote class="slide">
-    Fancy text has autocomplete blank
+    Fancy text edit blank
   </blockquote>
 
   <pre>
     <code class="language-html">
-      &lt;label id="fancy-id"&gt;Fancy text&lt;/label&gt;
+      &lt;label for="fancy-id"&gt;Fancy text&lt;/label&gt;
       &lt;fancy-input&gt;
-        &lt;input aria-labelledby="fancy-id" type="text" /&gt;
+        &lt;input id="fancy-id" type="text" /&gt;
       &lt;/fancy-input&gt;
     </code>
   </pre>
 
   <ul>
-    <li><code>aria-labelledby</code> reference survives the replacement</li>
-    <li>There are more ways to solve this</li>
-    <li>Test, test, test!</li>
+    <li><code>for</code> is now pointing to an <code>input</code></li>
+    <li><code>input</code> is available in light DOM</li>
   </ul>
 </div>
